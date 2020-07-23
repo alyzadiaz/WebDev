@@ -20,7 +20,12 @@ window.onload = function() {
     var search = document.getElementById("search");
 
     searchBtn.addEventListener("click", function(){
-        console.log(search.value);
+        document.getElementById("main").innerHTML="";
+        for(var i=0;i<80;i++){
+            if(fishList[i].name["name-USen"].includes(search.value.toLowerCase())){
+                insertFish("https://acnhapi.com/v1/fish/".concat(fishList[i].id));
+            }
+        }
     });
 }
 
@@ -37,7 +42,6 @@ function insertFish(api){
             var img = document.createElement("img");
             var name = document.createElement("div");
             name.classList.add("name");
-            name.classList.add("capitalize");
             name.innerHTML = data.name["name-USen"];
 
             img.src = data.image_uri;
@@ -49,18 +53,28 @@ function insertFish(api){
             let hoverData = data.name["name-USen"];
             img.title = hoverData;
 
-            /**
-             * delete the availability header and somehow put the north/south next to each other
-             */
-
             img.onclick = function() {
-                console.log("image is clicked");
                 document.getElementById("name").innerHTML = "Name: "+ data.name["name-USen"];
-                document.getElementById("north").innerHTML = "Northern Hemisphere: "+ data.availability["month-northern"];
-                //document.getElementById("south").innerHTML = "Southern Hemisphere: "+ data.availability["month-southern"];
-                console.log(data.availability);
+
+                if(data.availability["isAllYear"]===true){
+                    document.getElementById("n-months").innerHTML = "Months: All Year";
+                    document.getElementById("s-months").innerHTML = "Months: All Year";
+                }else{
+                    document.getElementById("n-months").innerHTML = "Months: "+data.availability["month-northern"];
+                    document.getElementById("s-months").innerHTML = "Months: "+data.availability["month-southern"];
+                }
+
+                if(data.availability["isAllDay"]===true){
+                    document.getElementById("n-time").innerHTML = "Time: All Day";
+                    document.getElementById("s-time").innerHTML = "Time: All Day";
+                }else{
+                    document.getElementById("n-time").innerHTML = "Time: "+data.availability["time"];
+                    document.getElementById("s-time").innerHTML = "Time: "+data.availability["time"];
+                }
+                
                 document.getElementById("shadow").innerHTML = "Shadow Size: "+ data.shadow;
                 document.getElementById("price").innerHTML = "Price: "+ data.price;
+                document.getElementById("cj-price").innerHTML = "CJ's Price: "+(data.price*1.5);
             };
         });
 }
