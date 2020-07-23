@@ -19,6 +19,10 @@ window.onload = function() {
         window.location.href = "sea.html";
     });
 
+    document.getElementById("home-button").addEventListener("click", function(){
+        window.location.href = "index.html";
+    });
+
     var searchBtn = document.getElementById("search_button");
     var search = document.getElementById("search");
 
