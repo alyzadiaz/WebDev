@@ -49,10 +49,15 @@ function insertFish(api){
             let hoverData = data.name["name-USen"];
             img.title = hoverData;
 
+            /**
+             * delete the availability header and somehow put the north/south next to each other
+             */
+
             img.onclick = function() {
                 console.log("image is clicked");
                 document.getElementById("name").innerHTML = "Name: "+ data.name["name-USen"];
-                document.getElementById("availability").innerHTML = "Availability: "+ data.availability["month-northern"];
+                document.getElementById("north").innerHTML = "Northern Hemisphere: "+ data.availability["month-northern"];
+                //document.getElementById("south").innerHTML = "Southern Hemisphere: "+ data.availability["month-southern"];
                 console.log(data.availability);
                 document.getElementById("shadow").innerHTML = "Shadow Size: "+ data.shadow;
                 document.getElementById("price").innerHTML = "Price: "+ data.price;
