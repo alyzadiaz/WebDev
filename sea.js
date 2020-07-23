@@ -1,22 +1,22 @@
-const apiurl = 'https://acnhapi.com/v1/fish/';
+const apiurl = 'https://acnhapi.com/v1/sea/';
 
-var fishList = [];
+var seaList = [];
 
-for(var i = 1;i<=80;i++){
+for(var i = 1;i<=40;i++){
     var api = apiurl.concat(i);
-    insertFish(api);
+    insertSea(api);
 }
 
 window.onload = function() {
     document.getElementById("all-button").addEventListener("click", function(){
         document.getElementById("main").innerHTML="";
-        for(var i=1;i<=80;i++){
-            insertFish(apiurl.concat(i));
+        for(var i=1;i<=40;i++){
+            insertSea(apiurl.concat(i));
         }
     });
 
-    document.getElementById("sea-button").addEventListener("click", function(){
-        window.location.href = "sea.html";
+    document.getElementById("fish-button").addEventListener("click", function(){
+        window.location.href = "fish.html";
     });
 
     var searchBtn = document.getElementById("search_button");
@@ -25,22 +25,22 @@ window.onload = function() {
     searchBtn.addEventListener("click", function(){
         document.getElementById("main").innerHTML="";
         for(var i=0;i<80;i++){
-            if(fishList[i].name["name-USen"].includes(search.value.toLowerCase())){
-                insertFish(apiurl.concat(fishList[i].id));
+            if(seaList[i].name["name-USen"].includes(search.value.toLowerCase())){
+                insertSea(apiurl.concat(seaList[i].id));
             }
         }
     });
 }
 
-function insertFish(api){
+function insertSea(api){
     fetch(api)
         .then(res => res.json())
         .then(data => {
-            fishList.push(data);
+            seaList.push(data);
 
             var main = document.getElementById("main");
-            var fish = document.createElement("div");
-            fish.classList.add("fish");
+            var sea = document.createElement("div");
+            sea.classList.add("sea");
 
             var img = document.createElement("img");
             var name = document.createElement("div");
@@ -48,10 +48,10 @@ function insertFish(api){
             name.innerHTML = data.name["name-USen"];
 
             img.src = data.image_uri;
-            fish.appendChild(img);
-            fish.appendChild(name);
+            sea.appendChild(img);
+            sea.appendChild(name);
 
-            main.appendChild(fish);
+            main.appendChild(sea);
 
             let hoverData = data.name["name-USen"];
             img.title = hoverData;
@@ -78,7 +78,6 @@ function insertFish(api){
                 
                 document.getElementById("shadow").innerHTML = "Shadow Size: "+ data.shadow;
                 document.getElementById("price").innerHTML = "Price: "+ data.price;
-                document.getElementById("cj-price").innerHTML = "CJ's Price: "+(data.price*1.5);
             };
         });
 }
