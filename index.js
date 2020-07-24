@@ -7,7 +7,6 @@ var month = date.getMonth() + 1;
 var hour = date.getHours();
 
 window.onload = function() {
-    
     for(var i = 1; i <= 80; i++) {
         var api = "https://acnhapi.com/v1/bugs/".concat(i);  
         fetch(api)
@@ -78,7 +77,7 @@ window.onload = function() {
 
                 if(data.availability["month-array-northern"].includes(month) && data.availability["time-array"].includes(hour)){
                     console.log("yes " + data.name["name-USen"] + " is available now");
-                   //create the necessary HTML objects for each bug
+
                     var main = document.getElementById('dailySea');
                     var sea = document.createElement('div');
                     sea.classList.add("sea");
