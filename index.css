@@ -1,5 +1,6 @@
 body{
     background-color: #549234;
+    font-family: 'Bree Serif', 'serif';
     padding-top: 4em;
 }
 
@@ -18,17 +19,19 @@ body{
 
 nav {
     width: 100%;
-    height: 4em;
-    /*background-color: #249452;*/
-    background-color: red;  
+    height: 5em;
+    background-color: #028090;  
     position: fixed;
     top: 0;
     left: 0;
 }
 
+nav img{
+    margin: 3px;
+}
+
 nav a {
     color: white;
-    font-family: 'Bree Serif', serif;
     font-size: 2em;
     text-decoration: none;
     padding-left: 1em;
@@ -109,14 +112,12 @@ nav a:hover {
 }
 
 button {
-    font-family: 'Bree Serif', 'serif';
     width: 30%;
     margin: .5em;
 }
 
 #profile {
     border-radius: 10%;
-    font-family: 'Bree Serif', serif;
     right: 0;
     display: flex;
     flex-direction: column;
@@ -150,16 +151,63 @@ button {
     overflow-x: hidden;
 }
 
+#tasks table{
+    text-indent: 2em;
+}
+
 #stars {
     background-color: #d8d067;
     justify-content: space-around;
     justify-items: center;
-    width: 15%;
+    width: 20%;
     height: 400px;
     border-radius: 10px;
     margin: 2em;
     overflow: scroll;
     overflow-x: hidden;
+}
+
+#stars p{
+    margin: 2em;
+    text-align: center;
+}
+
+#stars h3{
+    margin: 2em;
+    text-align: center;
+}
+
+#stars img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#scallop {
+    background-color: #53a9b2;
+    justify-content: space-around;
+    justify-items: center;
+    width: 20%;
+    height: 400px;
+    border-radius: 10px;
+    margin: 2em;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#scallop p{
+    margin: 2em;
+    text-align: center;
+}
+
+#scallop img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#rod-net-snorkel{
+    text-align: center;
 }
 
 ::-webkit-scrollbar {
@@ -175,17 +223,15 @@ button {
     background: #555;
 }
 
-#stars-todo{
+#stars-todo, #scallop {
     justify-content: center;
 }
 
 h2 {
     text-align: center;
-    font-family: 'Bree Serif', serif;
 }
 
 .name {
-    font-family: 'Bree Serif', serif;
     text-transform: capitalize;   
 }
 

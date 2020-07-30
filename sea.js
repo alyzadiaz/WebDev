@@ -15,14 +15,6 @@ window.onload = function() {
         }
     });
 
-    document.getElementById("fish-button").addEventListener("click", function(){
-        window.location.href = "fish.html";
-    });
-
-    document.getElementById("home-button").addEventListener("click", function(){
-        window.location.href = "index.html";
-    });
-
     var searchBtn = document.getElementById("search_button");
     var search = document.getElementById("search");
 
@@ -55,7 +47,7 @@ function insertSea(api){
             sea.appendChild(img);
             sea.appendChild(name);
 
-            main.appendChild(sea);
+            document.getElementById("push").appendChild(sea);
 
             let hoverData = data.name["name-USen"];
             img.title = hoverData;

@@ -1,6 +1,7 @@
 body{
     display: flex;
     background-color: #53a9b2;
+    font-family: 'Bree Serif', 'serif';
 }
 
 #main {
@@ -9,6 +10,40 @@ body{
     justify-items: center;
     width: 68%;
     border-radius: 10px;
+}
+
+nav {
+    width: 100%;
+    height: 5em;
+    background-color: #028090;  
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav img{
+    margin: 3px;
+}
+
+nav a {
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+nav a:hover {
+    color: aqua;
+}
+
+#push {
+    background-color: #028090;
+    justify-content: space-around;
+    justify-items: center;
+    width: 68%;
+    border-radius: 10px;
+    margin-top: 5em;
 }
 
 #container button {
