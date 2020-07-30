@@ -33,7 +33,7 @@ window.onload = function() {
                 insertSea(apiurl.concat(seaList[i].id));
             }
         }
-    });
+    })();
 }
 
 function insertSea(api){
