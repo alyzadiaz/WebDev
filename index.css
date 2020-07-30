@@ -144,7 +144,7 @@ button {
     justify-content: space-around;
     justify-items: center;
     width: 50%;
-    height: 400px;
+    height: 430px;
     border-radius: 10px;
     margin: 2em;
     overflow: scroll;
@@ -160,7 +160,7 @@ button {
     justify-content: space-around;
     justify-items: center;
     width: 20%;
-    height: 400px;
+    height: 430px;
     border-radius: 10px;
     margin: 2em;
     overflow: scroll;
@@ -188,7 +188,7 @@ button {
     justify-content: space-around;
     justify-items: center;
     width: 20%;
-    height: 400px;
+    height: 430px;
     border-radius: 10px;
     margin: 2em;
     overflow: scroll;
